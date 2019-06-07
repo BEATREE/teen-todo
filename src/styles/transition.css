@@ -1,0 +1,31 @@
+/* 为路由区域设计动画 */
+/* v-enter 是一个时间点，此时还没有进入，发生在进入之前 */
+/* v-leave-to 是在动画离开之后，动画的终止状态，此时元素已经离开动画范围 */
+/*  定义动画效果 */
+/* .v-enter{
+    opacity: 0; */
+    /* transform: translateX(100%);	进入时候从右侧 100% 进入 */
+
+/* }
+.v-leave-to{
+    opacity: 0; */
+    /* transform: translateX(-100%);	 出去时候从左侧 100% 出去 */
+    /* position: absolute;				 解决进出时候 组件产生的上下位移 */
+/* } */
+/* .v-enter-active, .v-leave-active {
+    transition: all .6s ease;
+} */
+
+/* 自定义的name属性对应的css */
+.mainContent-enter{
+    opacity: 0;     /*不透明度，0全透明 1不透明*/
+    transform: translateY(100%);
+}
+.mainContent-leave-to{
+    opacity: 0.2;     /*不透明度，0全透明 1不透明*/
+    transform: translateY(-100%);
+    position: absolute;				/*  解决进出时候 组件产生的上下位移 */
+}
+.mainContent-leave-active, .mainContent-enter-active{
+    transition: all .7s ease;
+}
