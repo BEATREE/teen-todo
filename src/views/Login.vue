@@ -112,7 +112,7 @@
           iconClass:'el-icon-s-opportunity',
           position: 'bottom-right',
           customClass:'webinfo',
-          duration: 0
+          duration: 5200
         });
     },
     methods: {

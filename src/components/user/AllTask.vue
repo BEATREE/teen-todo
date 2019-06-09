@@ -158,9 +158,10 @@
             });
             this.tableData[pos].tdone = !tdone;
           }
+        }).then( then => {                // 保证默认组件与元组件定义内容不冲突
+          this.$store.commit('clearTodos');
+          this.reload();
         })
-        this.$store.commit('clearTodos');
-        this.reload();
       },
       changeImportant(el){
         var timportant;
@@ -193,34 +194,7 @@
         this.$store.commit('clearTodos');
         this.reload();
       },
-      getAllToDos(){
-        let isInstore = this.$store.getters.getAlltodos.length;
-        console.log(isInstore)
-        if(isInstore != 0){
-          this.tableData = this.$store.getters.getAlltodos;
-          console.log('直接从仓库取得');
-        }else{
-          this.axios.get('alltodos.php').then( response => {
-              let res = response.data;   //用res承接返回后台的json文件(像使用数组那样)
-              console.log(res[0].status)
-              if(res[0].status == 1){
-                this.$store.commit('setAlltodos', res);
-                this.tableData = this.$store.getters.getAlltodos;
-                console.log('通过api取得');
-              }else if(res[0].status == 2){
-                this.tableData = this.$store.getters.getAlltodos;
-              }else{
-                localStorage.removeItem('currentUser');
-                localStorage.removeItem('userinfo');
-                this.$router.push("/login")
-                this.$message({
-                  message: '登录信息已过期！',
-                  type: 'warning'
-                });
-              }
-          })
-        }
-      },
+      
       getAllToDos(){
         let isInstore = this.$store.getters.getAlltodos.length;
         console.log(isInstore)

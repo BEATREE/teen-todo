@@ -156,9 +156,10 @@
             });
             this.tableData[pos].tdone = !tdone;
           }
+        }).then( then => {                // 保证默认组件与元组件定义内容不冲突
+          this.$store.commit('clearTodos');
+          this.reload();
         })
-        this.$store.commit('clearTodos');
-        this.reload();
       },
       changeImportant(el){
         var timportant;
