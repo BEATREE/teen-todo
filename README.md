@@ -1,7 +1,7 @@
 # Teen-TODO
 
 > My blog:  [梯云博客](https://www.teenshare.club)\
-> Project demo address:  [TLab - TeenTODO](http://lab.teenshare.club/teen-todo/)\
+> Project demo address:  [TLab - TeenTODO](http://lab.teenshare.club/teen-todo/)
 
 ## Brief Introduction
 
