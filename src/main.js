@@ -9,13 +9,17 @@ import './styles/index.scss'
 // 导入时间插件
 import moment from 'moment'
 
-Vue.config.productionTip = false;
+const isDebug_mode = process.env.NODE_ENV !== 'production';
+Vue.config.debug = isDebug_mode;
+Vue.config.devtools = isDebug_mode;
+Vue.config.productionTip = isDebug_mode;
+// Vue.config.productionTip = false;
 
 axios.defaults.headers = {
   "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
 }
-axios.defaults.baseURL = 'http://localhost:3000/api/'
-// axios.defaults.baseURL = 'http://lab.teenshare.club/teen-todo/api/'
+// axios.defaults.baseURL = 'http://localhost:3000/api/'
+axios.defaults.baseURL = 'api/'     // 生产环境下的api
 // 使每个请求带上session信息，我设置了withCredentials=true; 这个如果设置后，则服务器端必须指定域名
 // Access-Control-Allow-Origin 字段必须指定域名，不能为*
 // Access-Control-Allow-Credentials为true
