@@ -75,37 +75,37 @@
         },
         methods:{
             updateUserInfo() {
-                this.axios.post('updateuser.php', this.userInfo).then( response => {
-                    let res = response.data;
-                    if(res.status === 1){
-                        this.userInfo.userpasswd = '';
-                        this.$store.commit('setUserInfo', this.userInfo);
-                        this.$router.push('/admin/userinfo/'+this.userInfo.userid);
-                        this.$message({
-                            message: '账号信息修改成功',
-                            type: 'success'
-                        });
-                    }else if(res.status === 0){
-                        localStorage.removeItem('currentUser');
-                        localStorage.removeItem('userinfo');
-                        this.$router.push("/login")
-                        this.$message({
-                            message: '登录信息已过期！',
-                            type: 'warning'
-                        });
-                    }else{
-                        console.log(res)
-                        this.$message({
-                            message: '未检测到更新的信息',
-                            type: 'warning'
-                        });
-                    }
-                })
-                this.popovervisible = false;
+                // this.axios.post('updateuser.php', this.userInfo).then( response => {
+                //     let res = response.data;
+                //     if(res.status === 1){
+                //         this.userInfo.userpasswd = '';
+                //         this.$store.commit('setUserInfo', this.userInfo);
+                //         this.$router.push('/admin/userinfo/'+this.userInfo.userid);
+                //         this.$message({
+                //             message: '账号信息修改成功',
+                //             type: 'success'
+                //         });
+                //     }else if(res.status === 0){
+                //         localStorage.removeItem('currentUser');
+                //         localStorage.removeItem('userinfo');
+                //         this.$router.push("/login")
+                //         this.$message({
+                //             message: '登录信息已过期！',
+                //             type: 'warning'
+                //         });
+                //     }else{
+                //         console.log(res)
+                //         this.$message({
+                //             message: '未检测到更新的信息',
+                //             type: 'warning'
+                //         });
+                //     }
+                // })
+                // this.popovervisible = false;
             },
             handleAvatarSuccess(res, file) {
                 this.imageUrl = URL.createObjectURL(file.raw);
-                this.userInfo.headImg = res.storepath;
+                // this.userInfo.headImg = res.storepath;
                 // console.log(res)
             },
             beforeAvatarUpload(file) {
@@ -121,8 +121,8 @@
                 return isJPG && isLt2M;
             },
             getUserInfo(){
-                this.userInfo = this.$store.getters.getUserInfo;
-                this.imageUrl = this.userInfo.headImg;
+                // this.userInfo = this.$store.getters.getUserInfo;
+                // this.imageUrl = this.userInfo.headImg;
             },
             
         },
@@ -139,7 +139,6 @@
                   tdeadline:'',
                   uid: '',
               };
-            this.getListToDos();
           },
         },
         
