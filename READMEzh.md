@@ -1,7 +1,7 @@
 # Teen-TODO
 
->我的博客：[梯云博客](https://www.teenshare.club)\
->项目演示地址：[TLab  -  TeenTODO](http://lab.teenshare.club/teen-todo/)
+>我的博客：[梯云博客](https://beatree.cn)\
+>项目演示地址：[TLab  -  TeenTODO](http://lab.beatree.cn/teen-todo/)
 
 ## 项目简介
 
